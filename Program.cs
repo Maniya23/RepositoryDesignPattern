@@ -10,7 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 // Here we can say what class to be used when IWeatherForecastService is getting used 
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastServiceExtended>(); 
+builder.Services.AddScoped<IWeatherForecastService, WeatherForecastServiceExtended>();
+builder.Services.AddScoped<ITodoService, TodoService>();
 
 var app = builder.Build();
 

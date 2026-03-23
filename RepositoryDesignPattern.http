@@ -1,6 +1,41 @@
 @RepositoryDesignPattern_HostAddress = http://localhost:5036
+@ContentType = application/json
 
-GET {{RepositoryDesignPattern_HostAddress}}/weatherforecast/
-Accept: application/json
+### Get all todos (includes 2 default items)
+GET {{RepositoryDesignPattern_HostAddress}}/TodoList
+Accept: {{ContentType}}
+
+### Get todo by id
+GET {{RepositoryDesignPattern_HostAddress}}/TodoList/1
+Accept: {{ContentType}}
+
+### Add a new todo
+POST {{RepositoryDesignPattern_HostAddress}}/TodoList
+Content-Type: {{ContentType}}
+
+{
+  "title": "Test with JSON",
+  "isCompleted": false
+}
+
+### Update a todo
+PUT {{RepositoryDesignPattern_HostAddress}}/TodoList/1
+Content-Type: {{ContentType}}
+
+{
+  "title": "Learn Repository Design Pattern - Updated",
+  "isCompleted": true
+}
+
+### Mark todo as complete
+PATCH {{RepositoryDesignPattern_HostAddress}}/TodoList/2/complete
+
+### Delete a todo
+DELETE {{RepositoryDesignPattern_HostAddress}}/TodoList/3
+
+###
+### Weather Forecast
+GET {{RepositoryDesignPattern_HostAddress}}/WeatherForecast
+Accept: {{ContentType}}
 
 ###
